@@ -97,10 +97,10 @@ Public Sub btnPonto_Click()
   
 End
 
-Private Sub btnOperacoes(operacao As String)
+Private Sub btnOperacoes(operacaoSelecionada As String)
   
   NumeroAnterior = CFloat(lblVisor.Text)
-  operacao = operacao
+  operacao = operacaoSelecionada
   LimparLabel = True
   
 End
@@ -129,3 +129,19 @@ Public Sub btnDivisao_Click()
   btnOperacoes("/")
 
 End
+
+Public Sub btnIgual_Click()
+
+  If operacao == "+" Then
+    lblVisor.Text = CFloat(lblVisor.Text) + NumeroAnterior
+  Else If operacao == "-" Then
+    lblVisor.Text = CFloat(lblVisor.Text) - NumeroAnterior
+  Else If operacao == "*" Then
+    lblVisor.Text = CFloat(lblVisor.Text) * NumeroAnterior
+  Else If operacao == "/" Then
+    lblVisor.Text = CFloat(lblVisor.Text) / NumeroAnterior
+  Endif
+  operacao = ""
+
+End
+
