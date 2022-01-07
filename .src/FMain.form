@@ -1,5 +1,88 @@
 # Gambas Form File 3.0
 
-{ FMain Form
-  MoveScaled(0,0,64,64)
+{ Form Form
+  MoveScaled(0,0,45,52)
+  { lblVisor Label
+    MoveScaled(1,1,43,5)
+    Background = Color.White
+    Text = ("0")
+    Alignment = Align.Right
+    Border = Border.Sunken
+  }
+  { btn0 Button
+    MoveScaled(1,43,10,8)
+    Text = ("0")
+  }
+  { btn1 Button
+    MoveScaled(1,34,10,8)
+    Text = ("1")
+  }
+  { btn2 Button
+    MoveScaled(12,34,10,8)
+    Text = ("2")
+  }
+  { btn3 Button
+    MoveScaled(23,34,10,8)
+    Text = ("3")
+  }
+  { btnPonto Button
+    MoveScaled(12,43,10,8)
+    Text = (".")
+  }
+  { btnIgual Button
+    MoveScaled(23,43,10,8)
+    Text = ("=")
+  }
+  { btn4 Button
+    MoveScaled(1,25,10,8)
+    Text = ("4")
+  }
+  { btn5 Button
+    MoveScaled(12,25,10,8)
+    Text = ("5")
+  }
+  { btn6 Button
+    MoveScaled(23,25,10,8)
+    Text = ("6")
+  }
+  { btn7 Button
+    MoveScaled(1,16,10,8)
+    Text = ("7")
+  }
+  { btn8 Button
+    MoveScaled(12,16,10,8)
+    Text = ("8")
+  }
+  { btn9 Button
+    MoveScaled(23,16,10,8)
+    Text = ("9")
+  }
+  { btnC Button
+    MoveScaled(1,7,10,8)
+    Text = ("C")
+  }
+  { btnCE Button
+    MoveScaled(12,7,10,8)
+    Text = ("CE")
+  }
+  { btnFechar Button
+    MoveScaled(23,7,21,8)
+    Text = ("FECHAR")
+  }
+  { btnDivisao Button
+    MoveScaled(34,16,10,8)
+    Text = ("/")
+  }
+  { btnMultiplicacao Button
+    MoveScaled(34,25,10,8)
+    Text = ("X")
+  }
+  { btnSubtracao Button
+    MoveScaled(34,34,10,8)
+    Text = ("-")
+  }
+  { btnAdicao Button
+    MoveScaled(34,43,10,8)
+    Text = ("+")
+  }
 }
