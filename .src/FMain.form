@@ -5,6 +5,7 @@
   { lblVisor Label
     MoveScaled(1,1,43,5)
     Background = Color.White
+    Foreground = Color.Black
     Text = ("0")
     Alignment = Align.Right
     Border = Border.Sunken
