@@ -5,14 +5,20 @@ Private operacao As String ' Essa variável armazena a operação matemática es
 Private numeroIsFracionado As Boolean ' Esta variável mostra se o número do visor é fracionado
 Private LimparLabel As Boolean
 
-Public Sub Form_Open()
+Private Sub clear()
   
   operacao = ""
   NumeroAnterior = 0
   numeroIsFracionado = False
   LimparLabel = True
-  btnFechar.SetFocus
   lblVisor.Text = "0"
+  
+End
+
+Public Sub Form_Open()
+  
+  clear()
+  btnFechar.SetFocus()
   
 End
 
@@ -145,3 +151,8 @@ Public Sub btnIgual_Click()
 
 End
 
+Public Sub btnC_Click()
+
+  clear()
+
+End
