@@ -1,18 +1,131 @@
 ' Gambas class file
 
-Private NumAnt As Float ' Esta variável armazenará o primeiro operando
-Private UltimoOperando As Float ' Esta variável armazenará o último operando
-Private operacao As String ' Esta variável armazenará a operação
-Private UltimoOperador As String ' Esta variável armazenará o último operador
-Private btnCEClicado As Boolean ' Esta variável armazena se o botão CE foi clicado
+Private NumeroAnterior As Float ' Esta variável armazenará o primeiro operando
+Private operacao As String ' Essa variável armazena a operação matemática escolhida
+Private numeroIsFracionado As Boolean ' Esta variável mostra se o número do visor é fracionado
+Private LimparLabel As Boolean
 
 Public Sub Form_Open()
   
   operacao = ""
-  UltimoOperador = ""
-  UltimoOperando = 0
-  NumAnt = 0
-  btnCEClicado = False
+  NumeroAnterior = 0
+  numeroIsFracionado = False
+  LimparLabel = True
   btnFechar.SetFocus
+  lblVisor.Text = "0"
   
+End
+
+Private Sub btnNumeroClick(digito As String)
+  
+  If CFloat(lblVisor.Text) == 0 Or LimparLabel == True Then
+    lblVisor.Text = digito
+    LimparLabel = False
+  Else
+    lblVisor.Text = lblVisor.Text & digito
+  Endif
+  
+End
+
+
+Public Sub btn1_Click()
+
+  btnNumeroClick("1")
+
+End
+
+Public Sub btn2_Click()
+
+  btnNumeroClick("2")
+
+End
+
+Public Sub btn3_Click()
+
+  btnNumeroClick("3")
+
+End
+
+Public Sub btn4_Click()
+
+  btnNumeroClick("4")
+
+End
+
+Public Sub btn5_Click()
+
+  btnNumeroClick("5")
+
+End
+
+Public Sub btn6_Click()
+
+  btnNumeroClick("6")
+
+End
+
+Public Sub btn7_Click()
+
+  btnNumeroClick("7")
+
+End
+
+Public Sub btn8_Click()
+
+  btnNumeroClick("8")
+
+End
+
+Public Sub btn9_Click()
+
+  btnNumeroClick("9")
+
+End
+
+Public Sub btn0_Click()
+
+  btnNumeroClick("0")
+
+End
+
+Public Sub btnPonto_Click()
+  
+  If numeroIsFracionado == False Then
+    numeroIsFracionado = True
+    lblVisor.Text = lblVisor.Text & "."
+  Endif
+  
+End
+
+Private Sub btnOperacoes(operacao As String)
+  
+  NumeroAnterior = CFloat(lblVisor.Text)
+  operacao = operacao
+  LimparLabel = True
+  
+End
+
+
+Public Sub btnAdicao_Click()
+
+  btnOperacoes("+")
+
+End
+
+Public Sub btnSubtracao_Click()
+
+  btnOperacoes("-")
+
+End
+
+Public Sub btnMultiplicacao_Click()
+
+  btnOperacoes("*")
+
+End
+
+Public Sub btnDivisao_Click()
+
+  btnOperacoes("/")
+
 End
