@@ -173,3 +173,9 @@ Public Sub btnCE_Click()
   UltimaOperacao = ""
 
 End
+
+Public Sub btnFechar_Click()
+
+  Quit
+
+End
