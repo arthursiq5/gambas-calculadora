@@ -4,6 +4,7 @@ Private NumeroAnterior As Float ' Esta variável armazenará o primeiro operando
 Private operacao As String ' Essa variável armazena a operação matemática escolhida
 Private numeroIsFracionado As Boolean ' Esta variável mostra se o número do visor é fracionado
 Private LimparLabel As Boolean
+Private UltimaOperacao As String
 
 Private Sub clear()
   
@@ -12,6 +13,7 @@ Private Sub clear()
   numeroIsFracionado = False
   LimparLabel = True
   lblVisor.Text = "0"
+  UltimaOperacao = ""
   
 End
 
@@ -30,7 +32,7 @@ Private Sub btnNumeroClick(digito As String)
   Else
     lblVisor.Text = lblVisor.Text & digito
   Endif
-  
+  UltimaOperacao = "AdicionadoNumero"
 End
 
 
@@ -107,6 +109,7 @@ Private Sub btnOperacoes(operacaoSelecionada As String)
   
   NumeroAnterior = CFloat(lblVisor.Text)
   operacao = operacaoSelecionada
+  UltimaOperacao = "OperacaoMatematica"
   LimparLabel = True
   
 End
@@ -139,13 +142,13 @@ End
 Public Sub btnIgual_Click()
 
   If operacao == "+" Then
-    lblVisor.Text = CFloat(lblVisor.Text) + NumeroAnterior
+    lblVisor.Text = NumeroAnterior + CFloat(lblVisor.Text)
   Else If operacao == "-" Then
-    lblVisor.Text = CFloat(lblVisor.Text) - NumeroAnterior
+    lblVisor.Text = NumeroAnterior - CFloat(lblVisor.Text)
   Else If operacao == "*" Then
-    lblVisor.Text = CFloat(lblVisor.Text) * NumeroAnterior
+    lblVisor.Text = NumeroAnterior * CFloat(lblVisor.Text)
   Else If operacao == "/" Then
-    lblVisor.Text = CFloat(lblVisor.Text) / NumeroAnterior
+    lblVisor.Text = NumeroAnterior / CFloat(lblVisor.Text)
   Endif
   operacao = ""
 
@@ -154,5 +157,19 @@ End
 Public Sub btnC_Click()
 
   clear()
+
+End
+
+Public Sub btnCE_Click()
+
+  If UltimaOperacao == "AdicionadoNumero" Then
+    LimparLabel = True
+    numeroIsFracionado = False
+    lblVisor.Text = "0"
+  Else If UltimaOperacao == "OperacaoMatematica"
+    operacao = ""
+  Endif
+  
+  UltimaOperacao = ""
 
 End
