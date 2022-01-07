@@ -111,6 +111,7 @@ Private Sub btnOperacoes(operacaoSelecionada As String)
   operacao = operacaoSelecionada
   UltimaOperacao = "OperacaoMatematica"
   LimparLabel = True
+  numeroIsFracionado = False
   
 End
 
@@ -155,6 +156,7 @@ Public Sub btnIgual_Click()
     lblVisor.Text = NumeroAnterior / CFloat(lblVisor.Text)
   Endif
   operacao = ""
+  numeroIsFracionado = False
 
 End
 
