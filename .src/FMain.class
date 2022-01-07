@@ -1,2 +1,18 @@
 ' Gambas class file
 
+Private NumAnt As Float ' Esta variável armazenará o primeiro operando
+Private UltimoOperando As Float ' Esta variável armazenará o último operando
+Private operacao As String ' Esta variável armazenará a operação
+Private UltimoOperador As String ' Esta variável armazenará o último operador
+Private btnCEClicado As Boolean ' Esta variável armazena se o botão CE foi clicado
+
+Public Sub Form_Open()
+  
+  operacao = ""
+  UltimoOperador = ""
+  UltimoOperando = 0
+  NumAnt = 0
+  btnCEClicado = False
+  btnFechar.SetFocus
+  
+End
