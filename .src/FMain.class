@@ -148,6 +148,10 @@ Public Sub btnIgual_Click()
   Else If operacao == "*" Then
     lblVisor.Text = NumeroAnterior * CFloat(lblVisor.Text)
   Else If operacao == "/" Then
+    If CFloat(lblVisor.Text) == 0 Then
+      Message.Warning("Erro: não pode fazer divisão por zero")
+      Return
+    Endif
     lblVisor.Text = NumeroAnterior / CFloat(lblVisor.Text)
   Endif
   operacao = ""
